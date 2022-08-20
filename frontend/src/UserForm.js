@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from "styled-components"
 
 const UserForm = () => {
 
@@ -27,15 +28,21 @@ const UserForm = () => {
   
   return (
     <div>
-      <label>username</label>
+      <UserFormLabel>username</UserFormLabel>
       <input value={username} onChange={e => setUserName(e.target.value)} type="text"></input>
-      <label>email</label>
+      <UserFormLabel>email</UserFormLabel>
       <input value={email} onChange={e => setEmail(e.target.value)} type="text"></input>
-      <label>image</label>
+      <UserFormLabel>image</UserFormLabel>
       <input onChange={fileSelected} type="file" accept="image/*"></input>
       <button onClick={postUser}>Submit</button>
     </div>
   )
 }
+
+const UserFormLabel = styled.label`
+  margin-left: 20px;
+  margin-right: 5px;
+`
+
 
 export default UserForm
